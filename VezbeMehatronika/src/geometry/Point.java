@@ -32,9 +32,24 @@ public class Point {
 		return Math.sqrt(dx*dx + dy*dy);
 	}
 	
+	public boolean contains(int x, int y) {
+		return this.distance(new Point(x,y)) <= 2;
+	}
+	
 	@Override
 	public String toString() {
 		return "(" + x + ", " + y + ")";
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if(obj instanceof Point) {
+			Point temp = (Point)obj;
+			if(temp.getX() == x && temp.getY()==y) {
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	public void setX(int x) {

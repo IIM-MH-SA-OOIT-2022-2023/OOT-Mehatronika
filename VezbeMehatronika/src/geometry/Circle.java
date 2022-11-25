@@ -28,9 +28,29 @@ public class Circle extends Object {
 		return radius * 2 * Math.PI;
 	}
 	
+	public boolean contains(int x, int y) {
+		return center.distance(new Point(x,y)) <= radius;
+	}
+	
+	public boolean contains(Point p) {
+		return contains(p.getX(), p.getY());
+	}
+	
 	@Override
 	public String toString() {
 		return "Center: " + center + ", radius: " + radius;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if(obj instanceof Circle) {
+			Circle temp = (Circle) obj;
+			if(temp.getCenter().equals(center) && 
+					temp.getRadius() == radius) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public int getRadius() {

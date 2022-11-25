@@ -25,9 +25,26 @@ public class Line {
 		return startPoint.distance(endPoint);
 	}
 	
+	public boolean contains(int x, int y) {
+		return lenght() - (startPoint.distance(new Point(x,y))
+			+ endPoint.distance(new Point(x,y))) <= 2;
+	}
+	
 	@Override
 	public String toString() {
 		return startPoint.toString() + " --> " + endPoint.toString();
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if(obj instanceof Line) {
+			Line temp = (Line)obj;
+			if(temp.getStartPoint().equals(startPoint) && 
+					temp.getEndPoint().equals(endPoint)) {
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	public void setStartPoint(Point startPoint) {
