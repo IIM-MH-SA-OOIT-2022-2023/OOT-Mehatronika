@@ -16,9 +16,18 @@ public class Line {
 	}
 	
 	public Line(Point startPoint, Point endPoint, boolean selected) {
-		this.startPoint = startPoint;
-		this.endPoint = endPoint;
+		this(startPoint, endPoint);
 		this.selected = selected;
+	}
+	
+	
+	public double lenght() {
+		return startPoint.distance(endPoint);
+	}
+	
+	@Override
+	public String toString() {
+		return startPoint.toString() + " --> " + endPoint.toString();
 	}
 	
 	public void setStartPoint(Point startPoint) {

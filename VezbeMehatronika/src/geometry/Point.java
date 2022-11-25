@@ -6,13 +6,6 @@ public class Point {
 	private int y;
 	private boolean selected;
 	
-	
-	public double distance(int x, int y) {
-		int dx = this.x - x;
-		int dy = this.y - y;
-		return Math.sqrt(dx*dx + dy*dy);
-	}
-	
 	public Point() {
 		
 	}
@@ -23,9 +16,25 @@ public class Point {
 	}
 	
 	public Point(int x, int y, boolean selected) {
-		this.x = x;
-		this.y = y;
+		this(x,y);
 		this.selected = selected;
+	}
+	
+	public double distance(int x, int y) {
+		int dx = this.x - x;
+		int dy = this.y - y;
+		return Math.sqrt(dx*dx + dy*dy);
+	}
+	
+	public double distance(Point p) {
+		int dx = this.x - p.getX();
+		int dy = this.y - p.getY();
+		return Math.sqrt(dx*dx + dy*dy);
+	}
+	
+	@Override
+	public String toString() {
+		return "(" + x + ", " + y + ")";
 	}
 	
 	public void setX(int x) {

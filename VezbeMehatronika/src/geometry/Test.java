@@ -27,6 +27,9 @@ public class Test {
 		Line l1 = new Line(p1,p2);
 		System.out.println(l1.getStartPoint().getX());
 		System.out.println(l1.getEndPoint().getX());
+		System.out.println(p1.distance(p2));
+		
+		System.out.println(p1.toString());
 
 
 	}
