@@ -32,7 +32,7 @@ public class Test {
 		System.out.println(p1.toString());*/
 		
 		//VEZBE 6
-		Rectangle r1 = new Rectangle(p1,50,50);
+		/*Rectangle r1 = new Rectangle(p1,50,50);
 		p1.setX(2);
 		p1.setY(5);
 		p2.setX(8);
@@ -51,7 +51,10 @@ public class Test {
 		System.out.println(d1 instanceof Circle);
 		System.out.println(d1.getInnerRadius());
 		
-		Circle c1 = new Circle();
+		Circle c1 = new Circle();*/
+		
+							//VEZBA 7
+		//Shape s1 = new Circle();
 		
 	}
 

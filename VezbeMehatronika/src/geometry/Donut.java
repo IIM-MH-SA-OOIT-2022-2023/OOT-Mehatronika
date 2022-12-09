@@ -1,9 +1,10 @@
 package geometry;
 
+import java.awt.Graphics;
+
 public class Donut extends Circle {
 
 	private int innerRadius;
-	private boolean selected;
 	
 	public Donut() {
 		
@@ -50,16 +51,16 @@ public class Donut extends Circle {
 		return false;
 	}
 	
+	@Override
+	public void draw(Graphics g) {
+		super.draw(g);
+		g.drawOval(getCenter().getX()-innerRadius,
+				getCenter().getY()-innerRadius, 
+				innerRadius*2, innerRadius*2);
+	}
+	
 	public int getInnerRadius() {
 		return innerRadius;
-	}
-
-	public boolean isSelected() {
-		return selected;
-	}
-
-	public void setSelected(boolean selected) {
-		this.selected = selected;
 	}
 
 	public void setInnerRadius(int innerRadius) {
