@@ -2,6 +2,8 @@ package geometry;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -21,15 +23,27 @@ public class Drawing extends JPanel {
 	public void paint(Graphics g) {
 		Point p1 = new Point(100,100);
 		Point p2 = new Point(200,200);
-		p1.draw(g);
-		p2.draw(g);
 		Line l1 = new Line(p1,p2);
-		l1.draw(g);
 		Rectangle r1 = new Rectangle(p1,50,50);
-		Circle c1 = new Donut(p2,30,15);
-		g.setColor(Color.BLUE);
-		r1.draw(g);
-		c1.draw(g);
+		Circle c1 = new Circle(p2,30);
+		Donut d1 = new Donut(p1,30,15);
+		
+		ArrayList<Shape> shapes = new ArrayList<>();
+		shapes.add(p1);
+		shapes.add(l1);
+		shapes.add(r1);
+		shapes.add(c1);
+		shapes.add(d1);
+		
+		/*for(Shape s: shapes) {
+			s.draw(g);
+		}*/
+		
+		for(Shape s: shapes) {
+			s.moveBy(10, 0);
+			s.draw(g);
+		}
+		
 	}
 	
 	public Drawing() {

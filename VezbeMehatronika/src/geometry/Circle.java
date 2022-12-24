@@ -83,8 +83,12 @@ public class Circle extends Shape {
 		return radius;
 	}
 
-	public void setRadius(int radius) {
-		this.radius = radius;
+	public void setRadius(int radius) throws Exception {
+		if(radius < 0) {
+			throw new Exception("Negativan poluprecnik");
+		}else {
+			this.radius = radius;
+		}
 	}
 
 	public Point getCenter() {

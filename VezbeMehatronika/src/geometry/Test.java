@@ -2,7 +2,7 @@ package geometry;
 
 public class Test {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		
 		Point p1 = new Point();
 		/*System.out.println(p1);
@@ -55,6 +55,26 @@ public class Test {
 		
 							//VEZBA 7
 		//Shape s1 = new Circle();
+		
+						
+							//VEZBA 9
+		
+		/*int broj2 = 5/0;
+		try {
+			int broj = 5/0;
+		}catch(Exception e) {
+			System.out.println("Deljenje sa nulom nije dozvoljeno!");
+		}
+		
+		System.out.println("Ispis");*/
+		
+		Circle c1 = new Circle();
+		try {
+			c1.setRadius(-5);
+		} catch (Exception e) {
+			System.out.println("Poluprecnik mora biti veci od 0");
+		}
+		
 		
 	}
 
